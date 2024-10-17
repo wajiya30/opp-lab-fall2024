@@ -1,0 +1,124 @@
+//TASK1
+package studentdata;
+
+   public class StudentData {
+    private String[] studentNames;
+    private int[] studentScores;
+
+    // Constructor to initialize the arrays
+    public StudentData(String[] names, int[] scores) {
+        this.studentNames = names;
+        this.studentScores = scores;
+    }
+
+    // Method to display all student names and their scores
+    public void displayStudentData() {
+        System.out.println("Student Data:");
+        for (int i = 0; i < studentNames.length; i++) {
+            System.out.println("Name: " + studentNames[i] + ", Score: " + studentScores[i]);
+        }
+    }
+
+    public double calculateAverageScore() {
+        int total = 0;
+        for (int score : studentScores) {
+            total += score;
+        }
+        return (double) total / studentScores.length;
+    }
+
+    public static void main(String[] args) {
+        // Create arrays for student names and scores
+        String[] names = {"Wajeeha", "fatima", "ayla", "alaya", "hareem"};
+        int[] scores = {85, 90, 78, 92, 88};
+
+        StudentData data = new StudentData(names, scores);
+
+        data.displayStudentData();
+
+        double average = data.calculateAverageScore();
+        System.out.println("Average Score: " + average);
+    }
+}
+
+//TASK2
+package oddevenchecker;
+
+import java.util.Scanner;
+
+public class OddEvenChecker {
+    // Method to check if a number is odd or even
+    public void checkOddEven(int number) {
+        if (number % 2 == 0) {
+            System.out.println(number + " is even.");
+        } else {
+            System.out.println(number + " is odd.");
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+
+        OddEvenChecker checker = new OddEvenChecker();
+
+        checker.checkOddEven(number);
+
+        scanner.close();
+    }
+}
+//TASK 3
+package evennumbers;
+
+public class EvenNumbers {
+    
+    public static void main(String[] args) {
+        // Initialize a variable to start from 1
+        int number = 1;
+        // Loop from 1 to 20
+        while (number <= 20) {
+            // Check if the number is even
+            if (number % 2 == 0) {
+                // Print the even number
+                System.out.println(number);
+            }
+            // Increment the number
+            number++;
+        }
+    }
+}
+package asteriktriangle;
+
+public class AsterikTriangle {
+      public static void main(String[] args) {
+     int rows = 4;
+        int columns = 5;
+
+        // Outer loop for each row
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+      }
+}
+//TASK 4
+package asteriktriangle;
+
+public class AsterikTriangle {
+      public static void main(String[] args) {
+     int rows = 4;
+        int columns = 5;
+
+        // Outer loop for each row
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+      }
+}

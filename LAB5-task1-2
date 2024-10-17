@@ -1,0 +1,156 @@
+//TASK1
+package player;
+
+public class Player {
+
+    String playerName;
+  String position;
+
+    // Constructor
+    public Player(String playerName, String position) {
+        this.playerName = playerName;
+        this.position = position;
+    }
+
+    // Getters
+    public String getPlayerName() {
+        return playerName;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    // Method to display player details
+    public void displayPlayerInfo() {
+        System.out.println("Player Name: " + playerName + ", Position: " + position);
+    }
+}
+public class Team {
+     private Player player1;
+    private Player player2;
+
+    // Constructor
+    public Team() {
+        this.player1 = null;
+        this.player2 = null;
+    }
+
+    // Method to add players to specific positions
+    public void addPlayer1(Player player) {
+        this.player1 = player;
+        System.out.println(player.getPlayerName() + " added to the team as Player 1.");
+    }
+
+    public void addPlayer2(Player player) {
+        this.player2 = player;
+        System.out.println(player.getPlayerName() + " added to the team as Player 2.");
+    }
+
+    // Method to display all players in the team
+    public void displayTeamPlayers() {
+        System.out.println("Team Players:");
+        if (player1 != null) {
+            player1.displayPlayerInfo();
+        } else {
+            System.out.println("Player 1: No player assigned.");
+        }
+
+        if (player2 != null) {
+            player2.displayPlayerInfo();
+        } else {
+            System.out.println("Player 2: No player assigned.");
+        }
+    }
+}
+public class Main {
+     public static void main(String[] args) {
+        // Creating Player objects
+        Player player1 = new Player("wajia", "Forward");
+        Player player2 = new Player("alaya", "Midfielder");
+
+        // Creating a Team object
+        Team team = new Team();
+
+        // Adding players to the team
+        team.addPlayer1(player1);
+        team.addPlayer2(player2);
+
+        // Displaying the players in the team
+        team.displayTeamPlayers();
+
+//TASK 2
+package computer;
+
+
+public class Computer {
+public class computer {
+    public CPU cpu;
+    public RAM ram;
+    public harddrive hardDrive;
+
+    public computer(String cpuBrand, String cpuCapacity, String ramBrand, String ramCapacity, String hardDriveBrand, String hardDriveCapacity) {
+        this.cpu = new CPU(cpuBrand, cpuCapacity);
+        this.ram = new RAM(ramBrand, ramCapacity);
+        this.hardDrive = new harddrive(hardDriveBrand, hardDriveCapacity);
+    }
+
+    public void displayComponents() {
+        System.out.println("Computer Components:");
+        System.out.println("CPU: Brand = " + cpu.brand + ", Capacity = " + cpu.capacity);
+        System.out.println("RAM: Brand = " + ram.brand + ", Capacity = " + ram.capacity);
+        System.out.println("Hard Drive: Brand = " + hardDrive.brand + ", Capacity = " + hardDrive.capacity);
+    }
+}
+    public static void main(String[] args) {
+        Computer computer = new Computer("Intel", "3.6 GHz", "Corsair", "16 GB", "Seagate", "1 TB");
+
+      
+        computer.displayComponents();
+
+        computer = null;
+
+        // Attempting to access components will not be possible, as they are part of the Computer object
+        System.out.println("After deleting the computer reference:");
+        // The components can't exist independently in this context.
+   
+    }
+    
+}
+
+package computer;
+
+
+public class CPU {
+
+    public String brand;
+    public String capacity;
+
+    public CPU(String brand, String capacity) {
+        this.brand = brand;
+        this.capacity = capacity;
+    }
+}
+package computer;
+
+ class RAM {
+     public String brand;
+    public String capacity;
+
+    public RAM(String brand, String capacity) {
+        this.brand = brand;
+        this.capacity = capacity;
+    }
+}
+package computer;
+
+
+public class harddrive {
+     public String brand;
+    public String capacity;
+
+    public harddrive(String brand, String capacity) {
+        this.brand = brand;
+        this.capacity = capacity;
+    }
+}

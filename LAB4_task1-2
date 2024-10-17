@@ -1,0 +1,85 @@
+//TASK1
+public static void main(String[] args) {
+        printFatima();
+    }
+
+public static void main(String[] args) {
+        // Number of rows for each letter
+        int height = 7;
+
+        // Loop through each row
+        for (int i = 0; i < height; i++) {
+            // Print 'E'
+            for (int j = 0; j < 5; j++) {
+                if (j == 0 || (i == 0 && j < 4) || (i == height / 2 && j < 4) || (i == height - 1 && j < 4)) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+
+            // Print space between letters
+            System.out.print("  ");
+
+            // Print 'M'
+            for (int j = 0; j < 5; j++) {
+                if (j == 0 || j == 4 || (i == j && j <= height / 2)) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+
+            // Print space between letters
+            System.out.print("  ");
+
+            // Print 'A'
+            for (int j = 0; j < 5; j++) {
+                if (j == 0 || j == 4 || (i == height / 2 && j > 0 && j < 4) || (i + j == height / 2 + 1 && j < 4)) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+
+            // Print space between letters
+            System.out.print("  ");
+
+            // Print 'N'
+            for (int j = 0; j < 5; j++) {
+                if (j == 0 || j == 4 || i == j) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+
+            // Move to the next line after printing each row
+            System.out.println();
+        }
+    }
+}
+//TASK2
+package com.mycompany.laptop;
+import java.util.Scanner;
+public class Laptop {
+     String brand;
+ 
+     Laptop (String brand)
+     {
+         this.brand=brand;
+     }
+     void displaybrand(String brand){
+         System.out.println("the brand is: "+brand);
+     }
+    public static void main(String[] args) {
+        
+        System.out.println("Enter the Laptop Brand: ");
+        Scanner scanner=new Scanner(System.in);
+        
+        String brand = scanner.nextLine();
+                Laptop laptop=new Laptop(brand);
+                laptop.displaybrand(brand);
+    }
+}
+
